@@ -9,7 +9,7 @@ import Foundation
 
 enum AppStrings {
     enum labelText: String {
-        case noTaskFound = "No Task Found"
+        case noTaskFound = "No User Found"
     }
     
     enum controllerTitles: String {

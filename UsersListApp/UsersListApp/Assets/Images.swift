@@ -8,7 +8,5 @@
 import UIKit
 
 enum Images {
-    static let logout = UIImage(systemName: "rectangle.portrait.and.arrow.forward")?
-                            .withTintColor(.white)
-                            .withRenderingMode(.alwaysTemplate)
+    static let defaultProfile = UIImage(named: "defaultUser")?.withTintColor(.lightGray).withRenderingMode(.alwaysTemplate)
 }

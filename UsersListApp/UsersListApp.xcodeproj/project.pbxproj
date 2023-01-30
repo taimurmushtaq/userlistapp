@@ -10,6 +10,9 @@
 		4A21FC0329884FE800D1BB46 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21FC0129884FE800D1BB46 /* UsersListViewController.swift */; };
 		4A21FC0429884FE800D1BB46 /* UsersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A21FC0229884FE800D1BB46 /* UsersListViewController.xib */; };
 		4A21FC06298850A200D1BB46 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21FC05298850A200D1BB46 /* BaseViewController.swift */; };
+		4A21FC0A2988527F00D1BB46 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21FC082988527F00D1BB46 /* UserTableViewCell.swift */; };
+		4A21FC0D298856E100D1BB46 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A21FC0C298856E100D1BB46 /* UserTableViewCell.xib */; };
+		4A21FC1029885A5900D1BB46 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A21FC0F29885A5900D1BB46 /* SDWebImage */; };
 		4AB35BDE29880FD6000EC191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35BDD29880FD6000EC191 /* AppDelegate.swift */; };
 		4AB35BE029880FD6000EC191 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35BDF29880FD6000EC191 /* SceneDelegate.swift */; };
 		4AB35BE529880FD6000EC191 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB35BE329880FD6000EC191 /* Main.storyboard */; };
@@ -47,6 +50,8 @@
 		4A21FC0129884FE800D1BB46 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		4A21FC0229884FE800D1BB46 /* UsersListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListViewController.xib; sourceTree = "<group>"; };
 		4A21FC05298850A200D1BB46 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4A21FC082988527F00D1BB46 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		4A21FC0C298856E100D1BB46 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		4AB35BDA29880FD6000EC191 /* UsersListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsersListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB35BDD29880FD6000EC191 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AB35BDF29880FD6000EC191 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A21FC1029885A5900D1BB46 /* SDWebImage in Frameworks */,
 				4AB35C58298811A4000EC191 /* MBProgressHUD in Frameworks */,
 				4AB35C4F298810DB000EC191 /* Alamofire in Frameworks */,
 			);
@@ -93,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A21FC072988526900D1BB46 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A21FC082988527F00D1BB46 /* UserTableViewCell.swift */,
+				4A21FC0C298856E100D1BB46 /* UserTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		4AB35BD129880FD6000EC191 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +212,7 @@
 				4A21FC0229884FE800D1BB46 /* UsersListViewController.xib */,
 				4AB35C592988431D000EC191 /* UserDetailsViewController.swift */,
 				4AB35C5A2988431D000EC191 /* UserDetailsViewController.xib */,
+				4A21FC072988526900D1BB46 /* Cells */,
 				4AB35C6629884410000EC191 /* ViewModels */,
 				4AB35C63298843F0000EC191 /* Models */,
 			);
@@ -240,6 +256,7 @@
 			packageProductDependencies = (
 				4AB35C4E298810DB000EC191 /* Alamofire */,
 				4AB35C57298811A4000EC191 /* MBProgressHUD */,
+				4A21FC0F29885A5900D1BB46 /* SDWebImage */,
 			);
 			productName = UsersListApp;
 			productReference = 4AB35BDA29880FD6000EC191 /* UsersListApp.app */;
@@ -273,6 +290,7 @@
 			packageReferences = (
 				4AB35C4D298810DB000EC191 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4AB35C56298811A4000EC191 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				4A21FC0E29885A5900D1BB46 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 4AB35BDB29880FD6000EC191 /* Products */;
 			projectDirPath = "";
@@ -292,6 +310,7 @@
 				4A21FC0429884FE800D1BB46 /* UsersListViewController.xib in Resources */,
 				4AB35BEA29880FD8000EC191 /* Assets.xcassets in Resources */,
 				4AB35C5C2988431D000EC191 /* UserDetailsViewController.xib in Resources */,
+				4A21FC0D298856E100D1BB46 /* UserTableViewCell.xib in Resources */,
 				4AB35BE529880FD6000EC191 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +338,7 @@
 				4A21FC0329884FE800D1BB46 /* UsersListViewController.swift in Sources */,
 				4AB35C3429881043000EC191 /* UIView+Extension.swift in Sources */,
 				4AB35C54298810F3000EC191 /* AppStrings.swift in Sources */,
+				4A21FC0A2988527F00D1BB46 /* UserTableViewCell.swift in Sources */,
 				4AB35C6A298845CA000EC191 /* UserListsViewModel.swift in Sources */,
 				4AB35C65298843FA000EC191 /* UserModel.swift in Sources */,
 				4AB35C2329881031000EC191 /* AppRouter.swift in Sources */,
@@ -566,6 +586,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4A21FC0E29885A5900D1BB46 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		4AB35C4D298810DB000EC191 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -585,6 +613,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4A21FC0F29885A5900D1BB46 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A21FC0E29885A5900D1BB46 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		4AB35C4E298810DB000EC191 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4AB35C4D298810DB000EC191 /* XCRemoteSwiftPackageReference "Alamofire" */;
