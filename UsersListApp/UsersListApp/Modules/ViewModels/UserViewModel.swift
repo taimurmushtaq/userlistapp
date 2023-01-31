@@ -29,8 +29,21 @@ extension UserViewModel {
     }
     
     var duration: String {
-        let registeredDate = userModel.registered.date.convertToDate(withFormat: DateFormats.registerationFormat.rawValue)
-        return registeredDate?.relativeTo() ?? ""
+        //let registeredDate = Date().addingTimeInterval(-1 * 24 * 60 * 60)
+        
+        if let registeredDate = userModel.registered.date.convertToDate(withFormat: DateFormats.registerationFormat.rawValue) {
+            if registeredDate.isToday() {
+                return registeredDate.convertToString(withFormat: DateFormats.todayFormat.rawValue)
+            } else if registeredDate.isYesterday() {
+                return registeredDate.convertToString(withFormat: DateFormats.yesterdayFormat.rawValue)
+            } else if registeredDate.isInWeak() {
+                return registeredDate.relativeString()
+            } else {
+                return registeredDate.convertToString(withFormat: DateFormats.simpleFormat.rawValue)
+            }
+        }
+        
+        return ""
     }
     
     var country: NSAttributedString {

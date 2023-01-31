@@ -12,6 +12,10 @@ enum AppStrings {
         case noTaskFound = "No User Found"
     }
     
+    enum errorMessages: String {
+        case genericMessage = "Something went wrong. Please try again in few min"
+    }
+    
     enum controllerTitles: String {
         case usersList = "Users List"
     }

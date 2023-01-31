@@ -32,7 +32,7 @@ extension UserListsViewModel {
                     usersViewModelArray = results.map(UserViewModel.init)
                     errorMessage.value = ""
                 } else {
-                    errorMessage.value = NetworkError.cannotParseResponse.localizedDescription
+                    errorMessage.value = AppStrings.errorMessages.genericMessage.rawValue
                 }
             case .failure(let error):
                 errorMessage.value = error.localizedDescription

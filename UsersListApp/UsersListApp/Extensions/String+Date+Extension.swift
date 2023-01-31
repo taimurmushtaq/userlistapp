@@ -8,6 +8,9 @@
 import Foundation
 
 enum DateFormats: String {
+    case simpleFormat = "MMMM dd, YYYY"
+    case todayFormat = "'Today,' hh:mm a"
+    case yesterdayFormat = "'Yesterday,' hh:mm a"
     case registerationFormat = "YYYY-MM-dd'T'HH:mm:ss.SSSZ"
 }
 
@@ -23,10 +26,24 @@ extension String {
 }
 
 extension Date {
-    func relativeTo() -> String {
+    func isToday() -> Bool {
+        return Calendar.current.isDateInToday(self)
+    }
+    func isYesterday() -> Bool {
+        return Calendar.current.isDateInYesterday(self)
+    }
+    func isInWeak() -> Bool {
+        return daysBetweenDate(toDate: Date()) < 7
+    }
+    func relativeString() -> String {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full
         return formatter.localizedString(for: self, relativeTo: Date())
+    }
+    
+    func daysBetweenDate(toDate: Date) -> Int {
+        let components = Calendar.current.dateComponents([.day], from: self, to: toDate)
+        return components.day ?? 0
     }
     
     func convertToString(withFormat format: String) -> String {

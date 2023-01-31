@@ -11,7 +11,6 @@
 		4A0CD2402988C10200429049 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD2392988C10200429049 /* NetworkService.swift */; };
 		4A0CD2412988C10200429049 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD23A2988C10200429049 /* NetworkRequest.swift */; };
 		4A0CD2422988C10200429049 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD23B2988C10200429049 /* NetworkRouter.swift */; };
-		4A0CD2442988C10200429049 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD23D2988C10200429049 /* NetworkError.swift */; };
 		4A0CD2452988C10200429049 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD23E2988C10200429049 /* NetworkConstants.swift */; };
 		4A0CD24B2988CF0E00429049 /* UsersSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD2492988CF0E00429049 /* UsersSearch.swift */; };
 		4A0CD24C2988CF0E00429049 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD24A2988CF0E00429049 /* Users.swift */; };
@@ -60,7 +59,6 @@
 		4A0CD2392988C10200429049 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4A0CD23A2988C10200429049 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		4A0CD23B2988C10200429049 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
-		4A0CD23D2988C10200429049 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		4A0CD23E2988C10200429049 /* NetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		4A0CD2492988CF0E00429049 /* UsersSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersSearch.swift; sourceTree = "<group>"; };
 		4A0CD24A2988CF0E00429049 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				4A0CD23E2988C10200429049 /* NetworkConstants.swift */,
-				4A0CD23D2988C10200429049 /* NetworkError.swift */,
 				4A0CD2392988C10200429049 /* NetworkService.swift */,
 				4A0CD23A2988C10200429049 /* NetworkRequest.swift */,
 				4A0CD23B2988C10200429049 /* NetworkRouter.swift */,
@@ -394,7 +391,6 @@
 				4AB35C6C298845FA000EC191 /* UserViewModel.swift in Sources */,
 				4A0CD24B2988CF0E00429049 /* UsersSearch.swift in Sources */,
 				4AB35C2429881031000EC191 /* ToastManager.swift in Sources */,
-				4A0CD2442988C10200429049 /* NetworkError.swift in Sources */,
 				4A21FC0329884FE800D1BB46 /* UsersListViewController.swift in Sources */,
 				4AB35C3429881043000EC191 /* UIView+Extension.swift in Sources */,
 				4AB35C54298810F3000EC191 /* AppStrings.swift in Sources */,
