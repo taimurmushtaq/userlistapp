@@ -9,7 +9,8 @@ import Foundation
 
 enum AppStrings {
     enum labelText: String {
-        case noTaskFound = "No User Found"
+        case noUserFound = "No User Found"
+        case loadingData = "Loading Data..."
     }
     
     enum errorMessages: String {

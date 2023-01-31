@@ -11,6 +11,7 @@ class UserListsViewModel {
     //MARK: - Properties
     var usersViewModelArray = [UserViewModel]()
     let errorMessage = Observable("")
+    let emptyMessage = Observable("")
     
     //MARK: - Init
     let userNetworkService: UserNetworkService
@@ -22,19 +23,25 @@ class UserListsViewModel {
 //MARK: - API Calls
 extension UserListsViewModel {
     func getUser(_ input: Users.Search.Input) {
+        emptyMessage.value = AppStrings.labelText.loadingData.rawValue
+        errorMessage.value = ""
+        
         userNetworkService.getUsers(input) { [self] result in
             switch result {
             case .success(let output):
-                
                 if let error = output.error {
+                    emptyMessage.value = AppStrings.labelText.noUserFound.rawValue
                     errorMessage.value = error
                 } else if let results = output.results {
                     usersViewModelArray = results.map(UserViewModel.init)
+                    emptyMessage.value = ""
                     errorMessage.value = ""
                 } else {
+                    emptyMessage.value = AppStrings.labelText.noUserFound.rawValue
                     errorMessage.value = AppStrings.errorMessages.genericMessage.rawValue
                 }
             case .failure(let error):
+                emptyMessage.value = AppStrings.labelText.noUserFound.rawValue
                 errorMessage.value = error.localizedDescription
             }
         }

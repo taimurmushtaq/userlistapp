@@ -13,6 +13,7 @@ class UsersListViewController: BaseViewController {
     
     //MARK: - Properties
     var router: AppNetworkRouterProtocol!
+    var emptyMessage = ""
     let viewModel: UserListsViewModel
     
     //MARK: - Init
@@ -55,6 +56,10 @@ extension UsersListViewController {
                 self?.tableView.reloadData()
             }
         }
+        
+        viewModel.emptyMessage.bind { [weak self] message in
+            self?.emptyMessage = message
+        }
     }
     
     func fetchUsers() {
@@ -74,7 +79,7 @@ extension UsersListViewController: UITableViewDataSource {
         let numberOfRows = viewModel.numberOfRows(inSection: section)
         
         if numberOfRows == 0 {
-            tableView.setEmptyMessage(AppStrings.labelText.noTaskFound.rawValue)
+            tableView.setEmptyMessage(emptyMessage)
         } else {
             tableView.restore()
         }
