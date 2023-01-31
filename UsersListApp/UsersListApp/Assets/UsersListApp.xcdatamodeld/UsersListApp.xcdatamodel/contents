@@ -1,4 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DateDM" representedClassName="DateTime" syncable="YES" codeGenerationType="class">
+        <attribute name="age" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" attributeType="String" defaultValueString=""/>
+        <relationship name="dob" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDM" inverseName="dob" inverseEntity="UserDM"/>
+        <relationship name="registered" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDM" inverseName="registered" inverseEntity="UserDM"/>
+    </entity>
+    <entity name="LocationDM" representedClassName="Location" syncable="YES" codeGenerationType="class">
+        <attribute name="city" attributeType="String" defaultValueString=""/>
+        <attribute name="country" attributeType="String" defaultValueString=""/>
+        <attribute name="state" attributeType="String" defaultValueString=""/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDM" inverseName="location" inverseEntity="UserDM"/>
+        <relationship name="street" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StreetDM" inverseName="street" inverseEntity="StreetDM"/>
+    </entity>
+    <entity name="NameDM" representedClassName="Name" syncable="YES" codeGenerationType="class">
+        <attribute name="first" attributeType="String" defaultValueString=""/>
+        <attribute name="last" attributeType="String" defaultValueString=""/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDM" inverseName="name" inverseEntity="UserDM"/>
+    </entity>
+    <entity name="StreetDM" representedClassName="Street" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="number" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="street" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationDM" inverseName="street" inverseEntity="LocationDM"/>
+    </entity>
+    <entity name="UserDM" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="cell" attributeType="String" defaultValueString=""/>
+        <attribute name="email" attributeType="String" defaultValueString=""/>
+        <attribute name="gender" attributeType="String" defaultValueString=""/>
+        <attribute name="net" optional="YES" attributeType="String"/>
+        <attribute name="phone" attributeType="String" defaultValueString=""/>
+        <relationship name="dob" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DateDM" inverseName="dob" inverseEntity="DateDM"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationDM" inverseName="location" inverseEntity="LocationDM"/>
+        <relationship name="name" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NameDM" inverseName="user" inverseEntity="NameDM"/>
+        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDM" inverseName="picture" inverseEntity="UserDM"/>
+        <relationship name="registered" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DateDM" inverseName="registered" inverseEntity="DateDM"/>
+    </entity>
+    <entity name="UserPictureDM" representedClassName="UserPicture" syncable="YES" codeGenerationType="class">
+        <attribute name="large" attributeType="String" defaultValueString=""/>
+        <attribute name="medium" attributeType="String" defaultValueString=""/>
+        <attribute name="thumbnail" attributeType="String" defaultValueString=""/>
+        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDM"/>
+    </entity>
 </model>

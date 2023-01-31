@@ -203,6 +203,7 @@
 				4A5FEE482989067100B44A3C /* UIComponents */,
 				4AB35C4C29881089000EC191 /* Modules */,
 				4A0CD2472988CF0E00429049 /* Domain */,
+				4AD57F3729891F8B006F8D0E /* LocalStorage */,
 				4AB35C3F29881071000EC191 /* NetworkService */,
 				4AB35C4B29881080000EC191 /* Assets */,
 			);
@@ -239,7 +240,6 @@
 				4AB35C1E29881031000EC191 /* ThemeManager.swift */,
 				4AB35C2129881031000EC191 /* AppLoader.swift */,
 				4AB35C1A29881031000EC191 /* ToastManager.swift */,
-				4AD57F35298911CA006F8D0E /* CoreDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -300,6 +300,14 @@
 				4AB35C672988441C000EC191 /* UserDetailsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4AD57F3729891F8B006F8D0E /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				4AD57F35298911CA006F8D0E /* CoreDataManager.swift */,
+			);
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
