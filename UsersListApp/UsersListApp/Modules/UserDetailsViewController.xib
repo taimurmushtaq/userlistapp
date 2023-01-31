@@ -43,7 +43,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huW-5Z-svs">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="661"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jp8-xw-033">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultUser" translatesAutoresizingMaskIntoConstraints="NO" id="Jp8-xw-033">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="gH8-sS-Zhd"/>
@@ -337,6 +337,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="defaultUser" width="46.666667938232422" height="46.666667938232422"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

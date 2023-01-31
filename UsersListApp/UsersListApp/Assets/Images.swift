@@ -8,5 +8,5 @@
 import UIKit
 
 enum Images {
-    static let defaultProfile = UIImage(named: "defaultUser")?.withTintColor(.lightGray).withRenderingMode(.alwaysTemplate)
+    static let defaultProfile = UIImage(named: "defaultUser")
 }
