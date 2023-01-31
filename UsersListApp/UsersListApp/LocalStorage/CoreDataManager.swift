@@ -32,6 +32,10 @@ class CoreDataManager {
             }
         }
     }
+    
+    init() {
+        clearAllUsers()
+    }
 }
 
 extension CoreDataManager {
@@ -52,6 +56,17 @@ extension CoreDataManager {
     
     func fetchUsers() -> [UserDM] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDM")
+        do {
+            return try persistentContainer.viewContext.fetch(fetchRequest) as? [UserDM] ?? []
+        } catch {
+            return []
+        }
+    }
+    
+    func fetchUsers(page: Int, limit: Int) -> [UserDM] {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDM")
+        fetchRequest.fetchLimit = limit
+        fetchRequest.fetchOffset = (page - 1) * limit
         do {
             return try persistentContainer.viewContext.fetch(fetchRequest) as? [UserDM] ?? []
         } catch {

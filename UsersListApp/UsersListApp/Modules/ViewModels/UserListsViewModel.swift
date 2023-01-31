@@ -10,8 +10,14 @@ import Foundation
 class UserListsViewModel {
     //MARK: - Properties
     var usersViewModelArray = [UserViewModel]()
-    let errorMessage = Observable("")
+    
+    var isLoading = false
     let emptyMessage = Observable("")
+    
+    var input = Users.Search.Input()
+    var seedInfo: Users.Search.Info!
+    
+    
     
     //MARK: - Init
     let userNetworkService: UserNetworkService
@@ -24,19 +30,29 @@ class UserListsViewModel {
 
 //MARK: - API Calls
 extension UserListsViewModel {
-    func getUser(_ input: Users.Search.Input) {
-        emptyMessage.value = AppStrings.labelText.loadingData.rawValue
-        errorMessage.value = ""
+    func configurePagination() {
+        input.results = 10
         
+        if let seedInfo = seedInfo {
+            input.page = (seedInfo.page+1).description
+            input.seed = seedInfo.seed
+        }
+    }
+    
+    func fetchUsers() {
+        isLoading = true
+        emptyMessage.value = AppStrings.labelText.loadingData.rawValue
+        
+        configurePagination()
         userNetworkService.getUsers(input) { [self] result in
             switch result {
             case .success(let output):
-                if let results = output.results {
-                    coreDataManager.clearAllUsers()
-                    coreDataManager.saveUsers(array: results)
-                    
-                    emptyMessage.value = ""
-                    errorMessage.value = ""
+                if let users = output.results {
+                    coreDataManager.saveUsers(array: users)
+                }
+                
+                if let info = output.info {
+                    seedInfo = info
                 }
                 
                 loadUsersFromCoreData()
@@ -47,16 +63,11 @@ extension UserListsViewModel {
     }
     
     func loadUsersFromCoreData(){
-        let users = coreDataManager.fetchUsers()
-        usersViewModelArray = users.map(UserViewModel.init)
-        
-        print("\n\nUsers Count: \(usersViewModelArray.count)\n\n")
-        
-        if usersViewModelArray.isEmpty {
-            emptyMessage.value = AppStrings.labelText.noUserFound.rawValue
-        }
-        
-        errorMessage.value = ""
+        let users = coreDataManager.fetchUsers(page: seedInfo.page, limit: seedInfo.results)
+        usersViewModelArray.append(contentsOf: users.map(UserViewModel.init))
+                
+        isLoading = false
+        emptyMessage.value = usersViewModelArray.isEmpty ? AppStrings.labelText.noUserFound.rawValue : ""
     }
 }
 

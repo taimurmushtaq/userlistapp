@@ -12,9 +12,10 @@ class UsersListViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Properties
-    var router: AppNetworkRouterProtocol!
     var emptyMessage = ""
+    var router: AppNetworkRouterProtocol!
     let viewModel: UserListsViewModel
+    
     
     //MARK: - Init
     init(viewModel: UserListsViewModel) {
@@ -49,23 +50,17 @@ extension UsersListViewController {
     }
     
     func bindData() {
-        viewModel.errorMessage.bind { [weak self] message in
-            if !message.isEmpty {
-                ToastManager.showMessage(message)
-            } else {
-                self?.tableView.reloadData()
-            }
-        }
-        
         viewModel.emptyMessage.bind { [weak self] message in
-            self?.emptyMessage = message
+            if !message.isEmpty {
+                self?.emptyMessage = message
+            }
+            
+            self?.tableView.reloadData()
         }
     }
     
     func fetchUsers() {
-        var input = Users.Search.Input()
-        input.results = 100
-        viewModel.getUser(input)
+        viewModel.fetchUsers()
     }
 }
 
@@ -101,6 +96,12 @@ extension UsersListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let user = viewModel.user(atIndex: indexPath) {
             router.routeToUserDetails(userViewModel: user)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if tableView.isLast(for: indexPath) && !viewModel.isLoading {
+            fetchUsers()
         }
     }
 }
