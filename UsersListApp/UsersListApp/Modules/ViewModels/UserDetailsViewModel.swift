@@ -8,9 +8,9 @@
 import Foundation
 
 class UserDetailsViewModel {
-    let userModel: Users.Search.User
+    let userViewModel: UserViewModel
     
-    init(userModel: Users.Search.User) {
-        self.userModel = userModel
+    init(userViewModel: UserViewModel) {
+        self.userViewModel = userViewModel
     }
 }

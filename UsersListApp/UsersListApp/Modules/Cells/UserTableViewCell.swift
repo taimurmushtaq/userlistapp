@@ -17,7 +17,7 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userCountryLabel: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var joiningDateLabel: UILabel!
 }
 
 //MARK: - Helper Methods
@@ -28,8 +28,8 @@ extension UserTableViewCell {
                                   options: [.retryFailed, .scaleDownLargeImages])
         userNameLabel.text = viewModel.fullName
         userEmailLabel.text = viewModel.emailAddress
-        durationLabel.text = viewModel.duration
-        userCountryLabel.attributedText = viewModel.country
+        joiningDateLabel.text = viewModel.formattedJoiningDate
+        userCountryLabel.attributedText = viewModel.countryAndCity
         
         selectionStyle = .none
     }

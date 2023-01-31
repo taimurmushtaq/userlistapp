@@ -9,6 +9,7 @@ import Foundation
 
 enum DateFormats: String {
     case simpleFormat = "MMMM dd, YYYY"
+    case dob = "dd MMM YYYY"
     case todayFormat = "'Today,' hh:mm a"
     case yesterdayFormat = "'Yesterday,' hh:mm a"
     case registerationFormat = "YYYY-MM-dd'T'HH:mm:ss.SSSZ"

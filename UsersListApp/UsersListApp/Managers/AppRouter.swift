@@ -11,8 +11,7 @@ protocol AppNetworkRouterProtocol: AnyObject {
     var controller: UIViewController? { get set }
     init(_ controller: UIViewController?)
     
-    func goBack()
-    func routeToUserDefailts(userModel: Users.Search.User)
+    func routeToUserDetails(userViewModel: UserViewModel)
 }
 
 
@@ -26,12 +25,10 @@ class AppNetworkRouter: AppNetworkRouterProtocol {
     }
     
     //MARK: - Protocol Methods
-    func goBack(){
-        controller?.navigationController?.popViewController(animated: true)
-    }
-    
-    func routeToUserDefailts(userModel: Users.Search.User) {
-        let nextController = AppFactory.userDetailViewController(router: self, userModel: userModel)
+    func routeToUserDetails(userViewModel: UserViewModel) {
+        let nextController = AppFactory.userDetailViewController(userViewModel: userViewModel)
         controller?.navigationController?.pushViewController(nextController, animated: true)
     }
 }
+
+

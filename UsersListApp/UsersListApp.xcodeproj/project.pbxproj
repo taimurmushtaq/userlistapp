@@ -22,6 +22,8 @@
 		4A21FC0A2988527F00D1BB46 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21FC082988527F00D1BB46 /* UserTableViewCell.swift */; };
 		4A21FC0D298856E100D1BB46 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A21FC0C298856E100D1BB46 /* UserTableViewCell.xib */; };
 		4A21FC1029885A5900D1BB46 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A21FC0F29885A5900D1BB46 /* SDWebImage */; };
+		4A5FEE472988FE4F00B44A3C /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FEE462988FE4F00B44A3C /* CGSize+Extension.swift */; };
+		4A5FEE4A2989068400B44A3C /* DiamondShapeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FEE492989068400B44A3C /* DiamondShapeButton.swift */; };
 		4AB35BDE29880FD6000EC191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35BDD29880FD6000EC191 /* AppDelegate.swift */; };
 		4AB35BE029880FD6000EC191 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35BDF29880FD6000EC191 /* SceneDelegate.swift */; };
 		4AB35BE529880FD6000EC191 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB35BE329880FD6000EC191 /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		4A21FC05298850A200D1BB46 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4A21FC082988527F00D1BB46 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		4A21FC0C298856E100D1BB46 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		4A5FEE462988FE4F00B44A3C /* CGSize+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
+		4A5FEE492989068400B44A3C /* DiamondShapeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondShapeButton.swift; sourceTree = "<group>"; };
 		4AB35BDA29880FD6000EC191 /* UsersListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsersListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB35BDD29880FD6000EC191 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AB35BDF29880FD6000EC191 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +166,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		4A5FEE482989067100B44A3C /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FEE492989068400B44A3C /* DiamondShapeButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		4AB35BD129880FD6000EC191 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +198,7 @@
 				4AB35C172988100D000EC191 /* Main */,
 				4AB35C1829881031000EC191 /* Managers */,
 				4AB35C2D29881043000EC191 /* Extensions */,
+				4A5FEE482989067100B44A3C /* UIComponents */,
 				4AB35C4C29881089000EC191 /* Modules */,
 				4A0CD2472988CF0E00429049 /* Domain */,
 				4AB35C3F29881071000EC191 /* NetworkService */,
@@ -231,12 +244,13 @@
 		4AB35C2D29881043000EC191 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4AB35C2E29881043000EC191 /* UIView+Extension.swift */,
 				4AB35C2F29881043000EC191 /* Array+Codable+Extension.swift */,
+				4A5FEE462988FE4F00B44A3C /* CGSize+Extension.swift */,
 				4AB35C3029881043000EC191 /* Dictionary+Codable+Extension.swift */,
 				4AB35C3129881043000EC191 /* String+Codable+Extension.swift */,
 				4AB35C3229881043000EC191 /* String+Date+Extension.swift */,
 				4AB35C3329881043000EC191 /* UITableView+Extension.swift */,
+				4AB35C2E29881043000EC191 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,6 +401,7 @@
 				4AB35C3629881043000EC191 /* Dictionary+Codable+Extension.swift in Sources */,
 				4A0CD2402988C10200429049 /* NetworkService.swift in Sources */,
 				4AB35C2829881031000EC191 /* ThemeManager.swift in Sources */,
+				4A5FEE472988FE4F00B44A3C /* CGSize+Extension.swift in Sources */,
 				4AB35C2A29881031000EC191 /* AppWindowManager.swift in Sources */,
 				4AB35C6C298845FA000EC191 /* UserViewModel.swift in Sources */,
 				4A0CD24B2988CF0E00429049 /* UsersSearch.swift in Sources */,
@@ -403,6 +418,7 @@
 				4AB35BDE29880FD6000EC191 /* AppDelegate.swift in Sources */,
 				4A0CD24C2988CF0E00429049 /* Users.swift in Sources */,
 				4AB35C3529881043000EC191 /* Array+Codable+Extension.swift in Sources */,
+				4A5FEE4A2989068400B44A3C /* DiamondShapeButton.swift in Sources */,
 				4AB35C1529880FFE000EC191 /* Observable.swift in Sources */,
 				4AB35C2929881031000EC191 /* AppFactory.swift in Sources */,
 				4AB35BE029880FD6000EC191 /* SceneDelegate.swift in Sources */,

@@ -51,7 +51,7 @@ extension UserListsViewModel {
         return usersViewModelArray.count
     }
     
-    func item(atIndex indexPath: IndexPath) -> UserViewModel? {
+    func user(atIndex indexPath: IndexPath) -> UserViewModel? {
         if indexPath.row < usersViewModelArray.count {
             return usersViewModelArray[indexPath.row]
         }

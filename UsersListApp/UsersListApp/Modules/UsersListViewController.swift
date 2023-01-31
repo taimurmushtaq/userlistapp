@@ -69,22 +69,24 @@ extension UsersListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRows = viewModel.numberOfRows(inSection: section)
-
+        
         if numberOfRows == 0 {
             tableView.setEmptyMessage(AppStrings.labelText.noTaskFound.rawValue)
         } else {
             tableView.restore()
         }
-
+        
         return numberOfRows
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let userViewModel = viewModel.user(atIndex: indexPath) else { return UITableViewCell(frame: .zero) }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier) as! UserTableViewCell
-        cell.configureCell(withViewModel: viewModel.item(atIndex: indexPath)!)
+        cell.configureCell(withViewModel: userViewModel)
         return cell
     }
 }
@@ -92,7 +94,8 @@ extension UsersListViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension UsersListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ToastManager.showMessage("TableView Row Selected")
+        if let user = viewModel.user(atIndex: indexPath) {
+            router.routeToUserDetails(userViewModel: user)
+        }
     }
 }
-

@@ -16,8 +16,16 @@ struct UserViewModel {
 }
 
 extension UserViewModel {
+    var userAge: String {
+        return userModel.dob.age.description
+    }
+    
     var userImageUrl: URL? {
         return URL(string: userModel.picture.medium)
+    }
+    
+    var userLargeImageUrl: URL? {
+        return URL(string: userModel.picture.large)
     }
     
     var fullName: String {
@@ -28,7 +36,7 @@ extension UserViewModel {
         return userModel.email
     }
     
-    var duration: String {
+    var formattedJoiningDate: String {
         //let registeredDate = Date().addingTimeInterval(-1 * 24 * 60 * 60)
         
         if let registeredDate = userModel.registered.date.convertToDate(withFormat: DateFormats.registerationFormat.rawValue) {
@@ -46,7 +54,31 @@ extension UserViewModel {
         return ""
     }
     
-    var country: NSAttributedString {
+    var countryAndCity: NSAttributedString {
         return NSAttributedString(string: "\(userModel.location.country) | \(userModel.location.city)")
+    }
+    
+    var dob: String {
+        if let registeredDate = userModel.dob.date.convertToDate(withFormat: DateFormats.registerationFormat.rawValue) {
+            return registeredDate.convertToString(withFormat: DateFormats.dob.rawValue)
+        }
+        
+        return ""
+    }
+    
+    var city: String {
+        return userModel.location.city
+    }
+    
+    var state: String {
+        return userModel.location.state
+    }
+    
+    var country: String {
+        return userModel.location.country
+    }
+    
+    var postcode: String {
+        return "\(userModel.location.street.name) \(userModel.location.street.number)"
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 protocol AppFactoryProtocol {
     static func usersListViewController() -> UsersListViewController
-    static func userDetailViewController(router: AppNetworkRouterProtocol, userModel: Users.Search.User) -> UserDetailsViewController
+    static func userDetailViewController( userViewModel: UserViewModel) -> UserDetailsViewController
 }
 
 class AppFactory: AppFactoryProtocol {
@@ -21,9 +21,9 @@ class AppFactory: AppFactoryProtocol {
         return controller
     }
     
-    static func userDetailViewController(router: AppNetworkRouterProtocol, userModel: Users.Search.User) -> UserDetailsViewController {
-        let viewModel = UserDetailsViewModel(userModel: userModel)
-        return UserDetailsViewController(router: router, viewModel: viewModel)
+    static func userDetailViewController( userViewModel: UserViewModel) -> UserDetailsViewController {
+        let viewModel = UserDetailsViewModel(userViewModel: userViewModel)
+        return UserDetailsViewController(viewModel: viewModel)
     }
 }
 
