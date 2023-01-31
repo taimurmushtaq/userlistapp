@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0CD23F2988C10200429049 /* URLStringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD2382988C10200429049 /* URLStringGenerator.swift */; };
+		4A0CD2402988C10200429049 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD2392988C10200429049 /* NetworkService.swift */; };
+		4A0CD2412988C10200429049 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD23A2988C10200429049 /* NetworkRequest.swift */; };
+		4A0CD2422988C10200429049 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD23B2988C10200429049 /* NetworkRouter.swift */; };
+		4A0CD2442988C10200429049 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD23D2988C10200429049 /* NetworkError.swift */; };
+		4A0CD2452988C10200429049 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD23E2988C10200429049 /* NetworkConstants.swift */; };
+		4A0CD24B2988CF0E00429049 /* UsersSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD2492988CF0E00429049 /* UsersSearch.swift */; };
+		4A0CD24C2988CF0E00429049 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD24A2988CF0E00429049 /* Users.swift */; };
 		4A21FC0329884FE800D1BB46 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21FC0129884FE800D1BB46 /* UsersListViewController.swift */; };
 		4A21FC0429884FE800D1BB46 /* UsersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A21FC0229884FE800D1BB46 /* UsersListViewController.xib */; };
 		4A21FC06298850A200D1BB46 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21FC05298850A200D1BB46 /* BaseViewController.swift */; };
@@ -40,13 +48,20 @@
 		4AB35C58298811A4000EC191 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB35C57298811A4000EC191 /* MBProgressHUD */; };
 		4AB35C5B2988431D000EC191 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C592988431D000EC191 /* UserDetailsViewController.swift */; };
 		4AB35C5C2988431D000EC191 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB35C5A2988431D000EC191 /* UserDetailsViewController.xib */; };
-		4AB35C65298843FA000EC191 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C64298843FA000EC191 /* UserModel.swift */; };
 		4AB35C682988441C000EC191 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C672988441C000EC191 /* UserDetailsViewModel.swift */; };
 		4AB35C6A298845CA000EC191 /* UserListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C69298845CA000EC191 /* UserListsViewModel.swift */; };
 		4AB35C6C298845FA000EC191 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C6B298845FA000EC191 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A0CD2382988C10200429049 /* URLStringGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLStringGenerator.swift; sourceTree = "<group>"; };
+		4A0CD2392988C10200429049 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4A0CD23A2988C10200429049 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		4A0CD23B2988C10200429049 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		4A0CD23D2988C10200429049 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		4A0CD23E2988C10200429049 /* NetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		4A0CD2492988CF0E00429049 /* UsersSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersSearch.swift; sourceTree = "<group>"; };
+		4A0CD24A2988CF0E00429049 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		4A21FC0129884FE800D1BB46 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		4A21FC0229884FE800D1BB46 /* UsersListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListViewController.xib; sourceTree = "<group>"; };
 		4A21FC05298850A200D1BB46 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +94,6 @@
 		4AB35C52298810F3000EC191 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		4AB35C592988431D000EC191 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		4AB35C5A2988431D000EC191 /* UserDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsViewController.xib; sourceTree = "<group>"; };
-		4AB35C64298843FA000EC191 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4AB35C672988441C000EC191 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		4AB35C69298845CA000EC191 /* UserListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListsViewModel.swift; sourceTree = "<group>"; };
 		4AB35C6B298845FA000EC191 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +113,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A0CD2372988C10200429049 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4A0CD23E2988C10200429049 /* NetworkConstants.swift */,
+				4A0CD23D2988C10200429049 /* NetworkError.swift */,
+				4A0CD2392988C10200429049 /* NetworkService.swift */,
+				4A0CD23A2988C10200429049 /* NetworkRequest.swift */,
+				4A0CD23B2988C10200429049 /* NetworkRouter.swift */,
+				4A0CD2382988C10200429049 /* URLStringGenerator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4A0CD2462988CEBD00429049 /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		4A0CD2472988CF0E00429049 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4A0CD2482988CF0E00429049 /* Characters */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		4A0CD2482988CF0E00429049 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				4A0CD24A2988CF0E00429049 /* Users.swift */,
+				4A0CD2492988CF0E00429049 /* UsersSearch.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
 		4A21FC072988526900D1BB46 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +184,7 @@
 				4AB35C1829881031000EC191 /* Managers */,
 				4AB35C2D29881043000EC191 /* Extensions */,
 				4AB35C4C29881089000EC191 /* Modules */,
+				4A0CD2472988CF0E00429049 /* Domain */,
 				4AB35C3F29881071000EC191 /* NetworkService */,
 				4AB35C4B29881080000EC191 /* Assets */,
 			);
@@ -189,6 +241,8 @@
 		4AB35C3F29881071000EC191 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				4A0CD2462988CEBD00429049 /* User */,
+				4A0CD2372988C10200429049 /* Base */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -214,17 +268,8 @@
 				4AB35C5A2988431D000EC191 /* UserDetailsViewController.xib */,
 				4A21FC072988526900D1BB46 /* Cells */,
 				4AB35C6629884410000EC191 /* ViewModels */,
-				4AB35C63298843F0000EC191 /* Models */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		4AB35C63298843F0000EC191 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4AB35C64298843FA000EC191 /* UserModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		4AB35C6629884410000EC191 /* ViewModels */ = {
@@ -328,24 +373,31 @@
 				4AB35C2B29881031000EC191 /* AppLoader.swift in Sources */,
 				4AB35C1629880FFE000EC191 /* BaseNavigationController.swift in Sources */,
 				4A21FC06298850A200D1BB46 /* BaseViewController.swift in Sources */,
+				4A0CD2412988C10200429049 /* NetworkRequest.swift in Sources */,
+				4A0CD2452988C10200429049 /* NetworkConstants.swift in Sources */,
+				4A0CD23F2988C10200429049 /* URLStringGenerator.swift in Sources */,
+				4A0CD2422988C10200429049 /* NetworkRouter.swift in Sources */,
 				4AB35C5B2988431D000EC191 /* UserDetailsViewController.swift in Sources */,
 				4AB35BE829880FD6000EC191 /* UsersListApp.xcdatamodeld in Sources */,
 				4AB35C3629881043000EC191 /* Dictionary+Codable+Extension.swift in Sources */,
+				4A0CD2402988C10200429049 /* NetworkService.swift in Sources */,
 				4AB35C2829881031000EC191 /* ThemeManager.swift in Sources */,
 				4AB35C2A29881031000EC191 /* AppWindowManager.swift in Sources */,
 				4AB35C6C298845FA000EC191 /* UserViewModel.swift in Sources */,
+				4A0CD24B2988CF0E00429049 /* UsersSearch.swift in Sources */,
 				4AB35C2429881031000EC191 /* ToastManager.swift in Sources */,
+				4A0CD2442988C10200429049 /* NetworkError.swift in Sources */,
 				4A21FC0329884FE800D1BB46 /* UsersListViewController.swift in Sources */,
 				4AB35C3429881043000EC191 /* UIView+Extension.swift in Sources */,
 				4AB35C54298810F3000EC191 /* AppStrings.swift in Sources */,
 				4A21FC0A2988527F00D1BB46 /* UserTableViewCell.swift in Sources */,
 				4AB35C6A298845CA000EC191 /* UserListsViewModel.swift in Sources */,
-				4AB35C65298843FA000EC191 /* UserModel.swift in Sources */,
 				4AB35C2329881031000EC191 /* AppRouter.swift in Sources */,
 				4AB35C682988441C000EC191 /* UserDetailsViewModel.swift in Sources */,
 				4AB35C3929881043000EC191 /* UITableView+Extension.swift in Sources */,
 				4AB35C55298810F3000EC191 /* Images.swift in Sources */,
 				4AB35BDE29880FD6000EC191 /* AppDelegate.swift in Sources */,
+				4A0CD24C2988CF0E00429049 /* Users.swift in Sources */,
 				4AB35C3529881043000EC191 /* Array+Codable+Extension.swift in Sources */,
 				4AB35C1529880FFE000EC191 /* Observable.swift in Sources */,
 				4AB35C2929881031000EC191 /* AppFactory.swift in Sources */,

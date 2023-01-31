@@ -8,9 +8,9 @@
 import Foundation
 
 class UserViewModel {
-    let userModel: UserModel
+    let userModel: Users.Search.User
     
-    init(userModel: UserModel) {
+    init(userModel: Users.Search.User) {
         self.userModel = userModel
     }
 }
@@ -41,14 +41,14 @@ extension UserViewModel {
     static var mocArray: [UserViewModel] = {
         var mock = [UserViewModel]()
         
-        mock.append(UserViewModel(userModel: UserModel()))
-        mock.append(UserViewModel(userModel: UserModel()))
-        mock.append(UserViewModel(userModel: UserModel()))
-        mock.append(UserViewModel(userModel: UserModel()))
-        mock.append(UserViewModel(userModel: UserModel()))
-        mock.append(UserViewModel(userModel: UserModel()))
-        mock.append(UserViewModel(userModel: UserModel()))
-        mock.append(UserViewModel(userModel: UserModel()))
+        mock.append(UserViewModel(userModel: Users.Search.User()))
+        mock.append(UserViewModel(userModel: Users.Search.User()))
+        mock.append(UserViewModel(userModel: Users.Search.User()))
+        mock.append(UserViewModel(userModel: Users.Search.User()))
+        mock.append(UserViewModel(userModel: Users.Search.User()))
+        mock.append(UserViewModel(userModel: Users.Search.User()))
+        mock.append(UserViewModel(userModel: Users.Search.User()))
+        mock.append(UserViewModel(userModel: Users.Search.User()))
         
         return mock
     }()

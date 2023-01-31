@@ -12,7 +12,7 @@ class UsersListViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Properties
-    var router: AppRouterProtocol!
+    var router: AppNetworkRouterProtocol!
     let viewModel: UserListsViewModel
     
     //MARK: - Init

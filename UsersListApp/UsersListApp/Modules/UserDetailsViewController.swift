@@ -11,11 +11,11 @@ class UserDetailsViewController: BaseViewController {
     //MARK: - IBOutlet
     
     //MARK: - Properties
-    let router: AppRouterProtocol
+    let router: AppNetworkRouterProtocol
     let viewModel: UserDetailsViewModel
     
     //MARK: - Init
-    init(router: AppRouterProtocol, viewModel: UserDetailsViewModel) {
+    init(router: AppNetworkRouterProtocol, viewModel: UserDetailsViewModel) {
         self.router = router
         self.viewModel = viewModel
         super.init(nibName: "UserDetailsViewController", bundle: .main)

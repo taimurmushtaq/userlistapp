@@ -1,5 +1,5 @@
 //
-//  AppRouter.swift
+//  AppNetworkRouter.swift
 //  ToDoList
 //
 //  Created by Taimur Mushtaq on 24/01/2023.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-protocol AppRouterProtocol: AnyObject {
+protocol AppNetworkRouterProtocol: AnyObject {
     var controller: UIViewController? { get set }
     init(_ controller: UIViewController?)
     
     func goBack()
-    func routeToUserDefailts(userModel: UserModel)
+    func routeToUserDefailts(userModel: Users.Search.User)
 }
 
 
-class AppRouter: AppRouterProtocol {
+class AppNetworkRouter: AppNetworkRouterProtocol {
     //MARK: - Properties
     weak var controller: UIViewController?
     
@@ -30,7 +30,7 @@ class AppRouter: AppRouterProtocol {
         controller?.navigationController?.popViewController(animated: true)
     }
     
-    func routeToUserDefailts(userModel: UserModel) {
+    func routeToUserDefailts(userModel: Users.Search.User) {
         let nextController = AppFactory.userDetailViewController(router: self, userModel: userModel)
         controller?.navigationController?.pushViewController(nextController, animated: true)
     }
