@@ -54,6 +54,7 @@
 		4AB35C682988441C000EC191 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C672988441C000EC191 /* UserDetailsViewModel.swift */; };
 		4AB35C6A298845CA000EC191 /* UserListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C69298845CA000EC191 /* UserListsViewModel.swift */; };
 		4AB35C6C298845FA000EC191 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C6B298845FA000EC191 /* UserViewModel.swift */; };
+		4AD57F36298911CA006F8D0E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD57F35298911CA006F8D0E /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		4AB35C672988441C000EC191 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		4AB35C69298845CA000EC191 /* UserListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListsViewModel.swift; sourceTree = "<group>"; };
 		4AB35C6B298845FA000EC191 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		4AD57F35298911CA006F8D0E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				4AB35C1E29881031000EC191 /* ThemeManager.swift */,
 				4AB35C2129881031000EC191 /* AppLoader.swift */,
 				4AB35C1A29881031000EC191 /* ToastManager.swift */,
+				4AD57F35298911CA006F8D0E /* CoreDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				4AB35C55298810F3000EC191 /* Images.swift in Sources */,
 				4AB35BDE29880FD6000EC191 /* AppDelegate.swift in Sources */,
 				4A0CD24C2988CF0E00429049 /* Users.swift in Sources */,
+				4AD57F36298911CA006F8D0E /* CoreDataManager.swift in Sources */,
 				4AB35C3529881043000EC191 /* Array+Codable+Extension.swift in Sources */,
 				4A5FEE4A2989068400B44A3C /* DiamondShapeButton.swift in Sources */,
 				4AB35C1529880FFE000EC191 /* Observable.swift in Sources */,

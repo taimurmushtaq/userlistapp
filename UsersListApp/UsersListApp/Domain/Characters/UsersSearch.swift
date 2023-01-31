@@ -48,10 +48,8 @@ extension Users.Search {
         let net: String?
         let name: Name
         let location: Location
-        let login: Login
         let dob: DateTime
         let registered: DateTime
-        let id: Id
         let picture: UserPicture
         
         init(){
@@ -62,10 +60,8 @@ extension Users.Search {
             net = ""
             name = Name()
             location = Location()
-            login = Login()
             dob = DateTime()
             registered = DateTime()
-            id = Id()
             picture = UserPicture()
         }
     }
@@ -89,16 +85,12 @@ extension Users.Search.User {
     struct Location: Codable {
         let street: Street
         let city, state, country: String
-        let coordinates: Coordinate
-        let timeZone: TimeZone?
         
         init() {
             street = Street()
             city = ""
             state = ""
             country = ""
-            coordinates = Coordinate()
-            timeZone = TimeZone()
         }
     }
 }
@@ -116,47 +108,6 @@ extension Users.Search.User.Location {
     }
 }
 
-// MARK: - Coordinate
-extension Users.Search.User.Location {
-    struct Coordinate: Codable {
-        let latitude, longitude: String
-        
-        init() {
-            latitude = ""
-            longitude = ""
-        }
-    }
-}
-
-// MARK: - TimeZone
-extension Users.Search.User.Location {
-    struct TimeZone: Codable {
-        let offset, description: String
-        
-        init() {
-            offset = ""
-            description = ""
-        }
-    }
-}
-
-// MARK: - Login
-extension Users.Search.User {
-    struct Login: Codable {
-        let uuid, username, password, salt, md5, sha1, sha256: String
-        
-        init() {
-            uuid = ""
-            username = ""
-            password = ""
-            salt = ""
-            md5 = ""
-            sha1 = ""
-            sha256 = ""
-        }
-    }
-}
-
 // MARK: - DOB & Registered
 extension Users.Search.User {
     struct DateTime: Codable {
@@ -166,19 +117,6 @@ extension Users.Search.User {
         init() {
             date = ""
             age = 0
-        }
-    }
-}
-
-// MARK: - Id
-extension Users.Search.User {
-    struct Id: Codable {
-        let name: String
-        let value: String?
-        
-        init() {
-            name = ""
-            value = ""
         }
     }
 }
