@@ -2,7 +2,7 @@
 //  UserListsViewModel.swift
 //  UsersListApp
 //
-//  Created by Taimur Mushtaq on 30/01/2023.
+//  Created by Taimur Mushtaq on 31/01/2023.
 //
 
 import Foundation
@@ -15,8 +15,10 @@ class UserListsViewModel {
     
     //MARK: - Init
     let userNetworkService: UserNetworkService
-    init(userNetworkService: UserNetworkService) {
+    let coreDataManager: CoreDataManager
+    init(userNetworkService: UserNetworkService, coreDataManager: CoreDataManager) {
         self.userNetworkService = userNetworkService
+        self.coreDataManager = coreDataManager
     }
 }
 
@@ -29,22 +31,32 @@ extension UserListsViewModel {
         userNetworkService.getUsers(input) { [self] result in
             switch result {
             case .success(let output):
-                if let error = output.error {
-                    emptyMessage.value = AppStrings.labelText.noUserFound.rawValue
-                    errorMessage.value = error
-                } else if let results = output.results {
-                    usersViewModelArray = results.map(UserViewModel.init)
+                if let results = output.results {
+                    coreDataManager.clearAllUsers()
+                    coreDataManager.saveUsers(array: results)
+                    
                     emptyMessage.value = ""
                     errorMessage.value = ""
-                } else {
-                    emptyMessage.value = AppStrings.labelText.noUserFound.rawValue
-                    errorMessage.value = AppStrings.errorMessages.genericMessage.rawValue
                 }
-            case .failure(let error):
-                emptyMessage.value = AppStrings.labelText.noUserFound.rawValue
-                errorMessage.value = error.localizedDescription
+                
+                loadUsersFromCoreData()
+            case .failure(_):
+                loadUsersFromCoreData()
             }
         }
+    }
+    
+    func loadUsersFromCoreData(){
+        let users = coreDataManager.fetchUsers()
+        usersViewModelArray = users.map(UserViewModel.init)
+        
+        print("\n\nUsers Count: \(usersViewModelArray.count)\n\n")
+        
+        if usersViewModelArray.isEmpty {
+            emptyMessage.value = AppStrings.labelText.noUserFound.rawValue
+        }
+        
+        errorMessage.value = ""
     }
 }
 

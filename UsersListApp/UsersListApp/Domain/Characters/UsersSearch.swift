@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 extension Users.Search {
     struct Input: Codable {
@@ -67,6 +68,26 @@ extension Users.Search {
     }
 }
 
+extension Users.Search.User: ManagedObjectConvertible {
+    typealias ManagedObject = UserDM
+    
+    func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject? {
+        let userDM = UserDM(context: context)
+        userDM.gender = gender
+        userDM.email = email
+        userDM.phone = phone
+        userDM.cell = cell
+        userDM.net = net
+        userDM.name = name.toManagedObject(in: context)
+        userDM.location = location.toManagedObject(in: context)
+        userDM.dob = dob.toManagedObject(in: context)
+        userDM.registered = registered.toManagedObject(in: context)
+        userDM.picture = picture.toManagedObject(in: context)
+        
+        return userDM
+    }
+}
+
 // MARK: - Name
 extension Users.Search.User {
     struct Name: Codable {
@@ -77,6 +98,18 @@ extension Users.Search.User {
             first = ""
             last = ""
         }
+    }
+}
+
+extension Users.Search.User.Name: ManagedObjectConvertible {
+    typealias ManagedObject = NameDM
+    
+    func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject? {
+        let nameDM = NameDM(context: context)
+        nameDM.title = title
+        nameDM.first = first
+        nameDM.last = last
+        return nameDM
     }
 }
 
@@ -95,6 +128,19 @@ extension Users.Search.User {
     }
 }
 
+extension Users.Search.User.Location: ManagedObjectConvertible {
+    typealias ManagedObject = LocationDM
+    
+    func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject? {
+        let locationDM = LocationDM(context: context)
+        locationDM.street = street.toManagedObject(in: context)
+        locationDM.city = city
+        locationDM.state = state
+        locationDM.country = country
+        return locationDM
+    }
+}
+
 // MARK: - Street
 extension Users.Search.User.Location {
     struct Street: Codable {
@@ -105,6 +151,17 @@ extension Users.Search.User.Location {
             number = 0
             name = ""
         }
+    }
+}
+
+extension Users.Search.User.Location.Street: ManagedObjectConvertible {
+    typealias ManagedObject = StreetDM
+    
+    func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject? {
+        let streetDM = StreetDM(context: context)
+        streetDM.number = Int64(number)
+        streetDM.name = name
+        return streetDM
     }
 }
 
@@ -121,6 +178,18 @@ extension Users.Search.User {
     }
 }
 
+extension Users.Search.User.DateTime: ManagedObjectConvertible {
+    typealias ManagedObject = DateDM
+    
+    func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject? {
+        let dateDM = DateDM(context: context)
+        dateDM.date = date
+        dateDM.age = Int64(age)
+        return dateDM
+    }
+}
+
+
 // MARK: - Picture
 extension Users.Search.User {
     struct UserPicture: Codable {
@@ -134,3 +203,14 @@ extension Users.Search.User {
     }
 }
 
+extension Users.Search.User.UserPicture: ManagedObjectConvertible {
+    typealias ManagedObject = UserPictureDM
+    
+    func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject? {
+        let pictureDM = UserPictureDM(context: context)
+        pictureDM.large = large
+        pictureDM.medium = medium
+        pictureDM.thumbnail = thumbnail
+        return pictureDM
+    }
+}

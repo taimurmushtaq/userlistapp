@@ -33,13 +33,13 @@
         <relationship name="dob" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DateDM" inverseName="dob" inverseEntity="DateDM"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationDM" inverseName="location" inverseEntity="LocationDM"/>
         <relationship name="name" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NameDM" inverseName="user" inverseEntity="NameDM"/>
-        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDM" inverseName="picture" inverseEntity="UserDM"/>
+        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserPictureDM" inverseName="picture" inverseEntity="UserPictureDM"/>
         <relationship name="registered" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DateDM" inverseName="registered" inverseEntity="DateDM"/>
     </entity>
     <entity name="UserPictureDM" representedClassName="UserPictureDM" syncable="YES" codeGenerationType="class">
         <attribute name="large" attributeType="String" defaultValueString=""/>
         <attribute name="medium" attributeType="String" defaultValueString=""/>
         <attribute name="thumbnail" attributeType="String" defaultValueString=""/>
-        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDM"/>
+        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDM" inverseName="picture" inverseEntity="UserDM"/>
     </entity>
 </model>

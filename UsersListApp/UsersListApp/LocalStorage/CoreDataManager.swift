@@ -33,3 +33,29 @@ class CoreDataManager {
         }
     }
 }
+
+extension CoreDataManager {
+    func clearAllUsers() {
+        for user in fetchUsers() {
+            persistentContainer.viewContext.delete(user)
+        }
+        saveContext()
+    }
+    
+    func saveUsers(array: [Users.Search.User]) {
+        let context = persistentContainer.viewContext
+        
+        _ = array.map({ user in user.toManagedObject(in: context) })
+        
+        saveContext()
+    }
+    
+    func fetchUsers() -> [UserDM] {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDM")
+        do {
+            return try persistentContainer.viewContext.fetch(fetchRequest) as? [UserDM] ?? []
+        } catch {
+            return []
+        }
+    }
+}

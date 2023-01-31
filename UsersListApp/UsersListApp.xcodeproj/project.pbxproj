@@ -55,6 +55,8 @@
 		4AB35C6A298845CA000EC191 /* UserListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C69298845CA000EC191 /* UserListsViewModel.swift */; };
 		4AB35C6C298845FA000EC191 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB35C6B298845FA000EC191 /* UserViewModel.swift */; };
 		4AD57F36298911CA006F8D0E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD57F35298911CA006F8D0E /* CoreDataManager.swift */; };
+		4AD57F5329892ABD006F8D0E /* ManagedObjectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD57F5129892ABD006F8D0E /* ManagedObjectConvertible.swift */; };
+		4AD57F5429892ABD006F8D0E /* ModelConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD57F5229892ABD006F8D0E /* ModelConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +107,8 @@
 		4AB35C69298845CA000EC191 /* UserListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListsViewModel.swift; sourceTree = "<group>"; };
 		4AB35C6B298845FA000EC191 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		4AD57F35298911CA006F8D0E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4AD57F5129892ABD006F8D0E /* ManagedObjectConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectConvertible.swift; sourceTree = "<group>"; };
+		4AD57F5229892ABD006F8D0E /* ModelConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelConvertible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +309,8 @@
 		4AD57F3729891F8B006F8D0E /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
+				4AD57F5129892ABD006F8D0E /* ManagedObjectConvertible.swift */,
+				4AD57F5229892ABD006F8D0E /* ModelConvertible.swift */,
 				4AD57F35298911CA006F8D0E /* CoreDataManager.swift */,
 			);
 			path = LocalStorage;
@@ -413,6 +419,7 @@
 				4A0CD2402988C10200429049 /* NetworkService.swift in Sources */,
 				4AB35C2829881031000EC191 /* ThemeManager.swift in Sources */,
 				4A5FEE472988FE4F00B44A3C /* CGSize+Extension.swift in Sources */,
+				4AD57F5329892ABD006F8D0E /* ManagedObjectConvertible.swift in Sources */,
 				4AB35C2A29881031000EC191 /* AppWindowManager.swift in Sources */,
 				4AB35C6C298845FA000EC191 /* UserViewModel.swift in Sources */,
 				4A0CD24B2988CF0E00429049 /* UsersSearch.swift in Sources */,
@@ -424,6 +431,7 @@
 				4AB35C6A298845CA000EC191 /* UserListsViewModel.swift in Sources */,
 				4AB35C2329881031000EC191 /* AppRouter.swift in Sources */,
 				4AB35C682988441C000EC191 /* UserDetailsViewModel.swift in Sources */,
+				4AD57F5429892ABD006F8D0E /* ModelConvertible.swift in Sources */,
 				4AB35C3929881043000EC191 /* UITableView+Extension.swift in Sources */,
 				4AB35C55298810F3000EC191 /* Images.swift in Sources */,
 				4AB35BDE29880FD6000EC191 /* AppDelegate.swift in Sources */,

@@ -1,8 +1,8 @@
 //
 //  AppFactory.swift
-//  ToDoList
+//  UsersListApp
 //
-//  Created by Taimur Mushtaq on 24/01/2023.
+//  Created by Taimur Mushtaq on 31/01/2023.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ protocol AppFactoryProtocol {
 
 class AppFactory: AppFactoryProtocol {
     static func usersListViewController() -> UsersListViewController {
-        let viewModel = UserListsViewModel(userNetworkService: UserNetworkService())
+        let viewModel = UserListsViewModel(userNetworkService: UserNetworkService(), coreDataManager: CoreDataManager())
         let controller = UsersListViewController(viewModel: viewModel)
         controller.router = AppNetworkRouter(controller)
         

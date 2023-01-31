@@ -2,8 +2,7 @@
 //  CGSizeExt.swift
 //  Monty
 //
-//  Created by Taimur on 02/02/2017.
-//  Copyright © 2017 SevenTechnology. All rights reserved.
+//  Created by Taimur Mushtaq on 31/01/2023.
 //
 
 import Foundation

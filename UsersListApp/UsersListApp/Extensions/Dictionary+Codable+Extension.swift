@@ -1,9 +1,8 @@
 //
 //  Dictionary+Extension.swift
-//  ToDoList
+//  UsersListApp
 //
-//  Created by Taimur Mushtaq on 05/08/2021.
-//  Copyright © 2021 Easypaisa. All rights reserved.
+//  Created by Taimur Mushtaq on 31/01/2023.
 //
 
 import Foundation
