@@ -15,6 +15,8 @@
 		4A0CD2452988C10200429049 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD23E2988C10200429049 /* NetworkConstants.swift */; };
 		4A0CD24B2988CF0E00429049 /* UsersSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD2492988CF0E00429049 /* UsersSearch.swift */; };
 		4A0CD24C2988CF0E00429049 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD24A2988CF0E00429049 /* Users.swift */; };
+		4A0CD24E2988D59000429049 /* UserNetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD24D2988D59000429049 /* UserNetworkRouter.swift */; };
+		4A0CD2502988D75800429049 /* UsersNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CD24F2988D75800429049 /* UsersNetworkRequest.swift */; };
 		4A21FC0329884FE800D1BB46 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21FC0129884FE800D1BB46 /* UsersListViewController.swift */; };
 		4A21FC0429884FE800D1BB46 /* UsersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A21FC0229884FE800D1BB46 /* UsersListViewController.xib */; };
 		4A21FC06298850A200D1BB46 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21FC05298850A200D1BB46 /* BaseViewController.swift */; };
@@ -62,6 +64,8 @@
 		4A0CD23E2988C10200429049 /* NetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		4A0CD2492988CF0E00429049 /* UsersSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersSearch.swift; sourceTree = "<group>"; };
 		4A0CD24A2988CF0E00429049 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		4A0CD24D2988D59000429049 /* UserNetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkRouter.swift; sourceTree = "<group>"; };
+		4A0CD24F2988D75800429049 /* UsersNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersNetworkRequest.swift; sourceTree = "<group>"; };
 		4A21FC0129884FE800D1BB46 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		4A21FC0229884FE800D1BB46 /* UsersListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListViewController.xib; sourceTree = "<group>"; };
 		4A21FC05298850A200D1BB46 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 		4A0CD2462988CEBD00429049 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				4A0CD24D2988D59000429049 /* UserNetworkRouter.swift */,
+				4A0CD24F2988D75800429049 /* UsersNetworkRequest.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				4AB35C3729881043000EC191 /* String+Codable+Extension.swift in Sources */,
 				4AB35C53298810F3000EC191 /* Colors.swift in Sources */,
 				4AB35C2B29881031000EC191 /* AppLoader.swift in Sources */,
+				4A0CD24E2988D59000429049 /* UserNetworkRouter.swift in Sources */,
 				4AB35C1629880FFE000EC191 /* BaseNavigationController.swift in Sources */,
 				4A21FC06298850A200D1BB46 /* BaseViewController.swift in Sources */,
 				4A0CD2412988C10200429049 /* NetworkRequest.swift in Sources */,
@@ -378,6 +385,7 @@
 				4A0CD23F2988C10200429049 /* URLStringGenerator.swift in Sources */,
 				4A0CD2422988C10200429049 /* NetworkRouter.swift in Sources */,
 				4AB35C5B2988431D000EC191 /* UserDetailsViewController.swift in Sources */,
+				4A0CD2502988D75800429049 /* UsersNetworkRequest.swift in Sources */,
 				4AB35BE829880FD6000EC191 /* UsersListApp.xcdatamodeld in Sources */,
 				4AB35C3629881043000EC191 /* Dictionary+Codable+Extension.swift in Sources */,
 				4A0CD2402988C10200429049 /* NetworkService.swift in Sources */,

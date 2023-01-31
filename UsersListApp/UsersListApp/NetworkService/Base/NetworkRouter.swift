@@ -15,7 +15,7 @@ protocol NetworkRouter {
 
 extension NetworkRouter {
     static var apiVersion: String? {
-        return "v1"
+        return nil
     }
 
     static var name: String? {

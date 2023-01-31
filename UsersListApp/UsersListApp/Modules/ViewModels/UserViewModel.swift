@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserViewModel {
+struct UserViewModel {
     let userModel: Users.Search.User
     
     init(userModel: Users.Search.User) {

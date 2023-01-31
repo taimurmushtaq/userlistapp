@@ -32,6 +32,9 @@ class UsersListViewController: BaseViewController {
         super.viewDidLoad()
         
         configureTableView()
+        bindData()
+        
+        fetchUsers()
     }
 }
 
@@ -43,8 +46,23 @@ extension UsersListViewController {
         tableView.register(UINib.init(nibName: UserTableViewCell.identifier, bundle: .main), forCellReuseIdentifier: UserTableViewCell.identifier)
         tableView.reloadData()
     }
+    
+    func bindData() {
+        viewModel.errorMessage.bind { [weak self] message in
+            if !message.isEmpty {
+                ToastManager.showMessage(message)
+            } else {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    func fetchUsers() {
+        var input = Users.Search.Input()
+        input.results = 100
+        viewModel.getUser(input)
+    }
 }
-
 
 //MARK: - UITableViewDataSource
 extension UsersListViewController: UITableViewDataSource {
@@ -77,3 +95,4 @@ extension UsersListViewController: UITableViewDelegate {
         ToastManager.showMessage("TableView Row Selected")
     }
 }
+

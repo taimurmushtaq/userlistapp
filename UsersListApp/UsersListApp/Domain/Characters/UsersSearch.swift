@@ -9,27 +9,17 @@ import Foundation
 
 extension Users.Search {
     struct Input: Codable {
-        let results: Int?
-        let gender: String?
-        let password: String?
-        let seed: String?
-        let format: String?
-        let nat: String?
-        let page: String?
-        let inc: String?
-        let exc: String?
+        var results: Int?
+        var gender: String?
+        var password: String?
+        var seed: String?
+        var format: String?
+        var nat: String?
+        var page: String?
+        var inc: String?
+        var exc: String?
         
-        init() {
-            results = 0
-            gender = ""
-            password = ""
-            seed = ""
-            format = ""
-            nat = ""
-            page = ""
-            inc = ""
-            exc = ""
-        }
+        init() { }
     }
 }
 
@@ -38,7 +28,7 @@ extension Users.Search {
     struct Output: Codable {
         let error: String?
         let info: Info?
-        var results: [Results]?
+        var results: [User]?
     }
 }
 
@@ -47,21 +37,15 @@ extension Users.Search {
     struct Info: Codable {
         let results, page: Int
         var seed: String
-        var version: Double
+        var version: String
     }
 }
 
-// MARK: - Results
-extension Users.Search {
-    struct Results: Codable {
-        let offset, limit, total, count: Int
-        var results: [User]
-    }
-}
 // MARK: - Character
 extension Users.Search {
     struct User: Codable {
-        let gender, email, phone, cell, net: String
+        let gender, email, phone, cell: String
+        let net: String?
         let name: Name
         let location: Location
         let login: Login
@@ -104,16 +88,15 @@ extension Users.Search.User {
 extension Users.Search.User {
     struct Location: Codable {
         let street: Street
-        let city, state, country, postCode: String
+        let city, state, country: String
         let coordinates: Coordinate
-        let timeZone: TimeZone
+        let timeZone: TimeZone?
         
         init() {
             street = Street()
             city = ""
             state = ""
             country = ""
-            postCode = ""
             coordinates = Coordinate()
             timeZone = TimeZone()
         }
@@ -190,10 +173,11 @@ extension Users.Search.User {
 // MARK: - Id
 extension Users.Search.User {
     struct Id: Codable {
-        let nae, value: String
+        let name: String
+        let value: String?
         
         init() {
-            nae = ""
+            name = ""
             value = ""
         }
     }
@@ -202,12 +186,12 @@ extension Users.Search.User {
 // MARK: - Picture
 extension Users.Search.User {
     struct UserPicture: Codable {
-        let large, medium, thubmnail: String
+        let large, medium, thumbnail: String
         
         init() {
             large = ""
             medium = ""
-            thubmnail = ""
+            thumbnail = ""
         }
     }
 }

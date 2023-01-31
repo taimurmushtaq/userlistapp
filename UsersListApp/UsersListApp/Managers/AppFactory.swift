@@ -14,7 +14,7 @@ protocol AppFactoryProtocol {
 
 class AppFactory: AppFactoryProtocol {
     static func usersListViewController() -> UsersListViewController {
-        let viewModel = UserListsViewModel()
+        let viewModel = UserListsViewModel(userNetworkService: UserNetworkService())
         let controller = UsersListViewController(viewModel: viewModel)
         controller.router = AppNetworkRouter(controller)
         
