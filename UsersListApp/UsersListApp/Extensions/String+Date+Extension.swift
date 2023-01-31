@@ -8,14 +8,13 @@
 import Foundation
 
 enum DateFormats: String {
-    case simpleFormat = "dd/MM/yyyy"
-    case taskTimerFormat = "hh:mm a, dd MMM YYYY"
+    case registerationFormat = "YYYY-MM-dd'T'HH:mm:ss.SSSZ"
 }
 
 extension String {
-    func convertToDate(withFormat format: String?) -> Date? {
+    func convertToDate(withFormat format: String) -> Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format ?? DateFormats.simpleFormat.rawValue
+        dateFormatter.dateFormat = format
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.locale = Locale.current
         
@@ -24,9 +23,15 @@ extension String {
 }
 
 extension Date {
-    func convertToString(withFormat format: String?) -> String {
+    func relativeTo() -> String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter.localizedString(for: self, relativeTo: Date())
+    }
+    
+    func convertToString(withFormat format: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format ?? DateFormats.simpleFormat.rawValue
+        dateFormatter.dateFormat = format
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.locale = Locale.current
         

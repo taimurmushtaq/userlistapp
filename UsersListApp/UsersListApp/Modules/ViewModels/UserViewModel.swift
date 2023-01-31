@@ -17,39 +17,23 @@ struct UserViewModel {
 
 extension UserViewModel {
     var userImageUrl: URL? {
-        return URL(string: "https://media.istockphoto.com/id/1341046662/vector/picture-profile-icon-human-or-people-sign-and-symbol-for-template-design.jpg?s=2048x2048&w=is&k=20&c=4idzCdf3pzuScohnsKP4H3fnf2cLLLqPujLmdz2hOzc=")
+        return URL(string: userModel.picture.medium)
     }
     
     var fullName: String {
-        return "Taimur Mushtaq"
+        return "\(userModel.name.title) \(userModel.name.first) \(userModel.name.last)"
     }
     
     var emailAddress: String {
-        return "taimur_1989@hotmail.com"
+        return userModel.email
     }
     
     var duration: String {
-        return "2 days ago"
+        let registeredDate = userModel.registered.date.convertToDate(withFormat: DateFormats.registerationFormat.rawValue)
+        return registeredDate?.relativeTo() ?? ""
     }
     
     var country: NSAttributedString {
-        return NSAttributedString(string: "Country | United Arab Emirates")
+        return NSAttributedString(string: "\(userModel.location.country) | \(userModel.location.city)")
     }
-}
-
-extension UserViewModel {
-    static var mocArray: [UserViewModel] = {
-        var mock = [UserViewModel]()
-        
-        mock.append(UserViewModel(userModel: Users.Search.User()))
-        mock.append(UserViewModel(userModel: Users.Search.User()))
-        mock.append(UserViewModel(userModel: Users.Search.User()))
-        mock.append(UserViewModel(userModel: Users.Search.User()))
-        mock.append(UserViewModel(userModel: Users.Search.User()))
-        mock.append(UserViewModel(userModel: Users.Search.User()))
-        mock.append(UserViewModel(userModel: Users.Search.User()))
-        mock.append(UserViewModel(userModel: Users.Search.User()))
-        
-        return mock
-    }()
 }
